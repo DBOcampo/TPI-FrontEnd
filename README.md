@@ -1,2 +1,2 @@
-# friendly-invention
+# TPI-FrontEnd
 TPI portfolio - Front End
