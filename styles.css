@@ -1,0 +1,163 @@
+#parent
+{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#main-img
+{
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+#christian
+{
+    height: 200px;
+    width: 100%;
+    margin-top: -100px;
+    max-width: 200px;
+    object-fit: cover;
+    position: relative;
+}
+
+.bg-dark {
+    background-color: #000000ed!important;
+}
+
+body 
+{
+    background-color: #000000;
+    color: #ffffef;
+}
+
+.card 
+{
+    background-color: #000000;
+    border: 1px solid rgb(255 255 255 / 10%);
+}
+
+.modal-content
+{
+    background-color: #000000;
+    border: 3px solid rgb(255 255 255 / 10%);
+    border-bottom: 3px solid rgb(255 255 255 / 10%);
+}
+
+.modal-header
+{
+    border-bottom: 3px solid rgb(255 255 255 / 10%); 
+}
+
+.modal-footer
+{
+    border-top: 3px solid rgb(255 255 255 / 10%);
+}
+
+.close 
+{
+    color: #e22739;
+    text-shadow: 0 1px 0 #bd2130;
+}
+
+#edu .main-icon
+{
+    height: 55px;
+    width: 50px;
+}
+
+.dummy
+{
+    background-color: #bd2130;
+    height: 66px;
+    width: 100%;
+    visibility: hidden;
+}
+
+#brand-nav
+{
+    width: 36px;
+    height: 31px;
+    object-fit: scale-down;
+}
+
+#twitter
+{
+    width: 40px;
+    height: 40px;
+}
+
+#portfolio-img
+{
+    filter: invert(100%);
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+    max-width: 188px;
+}
+
+#loginModalBody .form-control
+{
+    height: 27px;
+    max-width: 250px;
+}
+
+#infoeditbtn, #eduEditbtn, #editbtn, #pyeditbtn
+{
+   float: right;
+   background-color: transparent;
+}
+
+#infoContent span   
+{
+    padding: 2px;
+}
+
+.editpen
+{
+    font-size: x-small;
+}
+
+.noselect {
+
+    user-select: none;
+}
+
+span 
+
+{
+    user-select: text;
+}
+
+.eduedtbtn 
+
+{
+ display: none;
+}
+
+.inputcr 
+{
+    display: none;
+}
+
+.card-img-top
+{
+    max-height: 308.9px;
+    object-fit: cover;
+}
+
+.pybtn 
+{
+    display: block;
+    margin: auto;
+    width: 100px;
+    background-color: transparent;
+}
+
+.pybtn:hover
+{
+    background-color: transparent;
+}

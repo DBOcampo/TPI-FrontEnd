@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>DBO Portfolio</title>
+</head>
+
+<body data-spy="scroll" data-target="#navbarSupportedContent">
+
+  <!-- NAV BAR -->
+
+  <header id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="nav-bar">
+      <a class="navbar-brand" href="#" alt="Argentina Programa #YoProgramo">
+        <img src="images/zzznew.png" id="brand-nav">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#dummyinfo">Infomacion personal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#dummyedu">Educacion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#dummyski">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#dummypro">Proyectos</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav justify-content-end">
+          <li>
+            <a class="navbar-brand" href="https://twitter.com/benjaocampo12" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-twitter"
+                viewBox="0 0 16 16">
+                <path
+                  d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <button type="button" class="btn btn-dark mt-1" id="lgnbtn" data-toggle="modal"
+              data-target="#exampleModal">Login</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- NAV BAR -->
+
+
+  <!-- Main -->
+
+  <div class="container-fluid text-center" id="parent">
+    <div class="row">
+      <div class="col-12 pr-0 pl-0">
+        <div class="container-fluid px-0" style="width: 100%;">
+          <div style="position: relative; top: 60px;">
+            <label class="btn mr-3 mt-2" id="banner" onchange="changeImg(this.id)"
+              style="position: relative; float: right;" id="bnrbtn">
+              <input type="file" accept="image/png, image/jpeg" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-pencil-fill mb-2"
+                viewBox="0 0 16 16">
+                <path
+                  d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+              </svg>
+            </label>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+            id="main-img">
+        </div>
+        <img src="images/hack.jpg" class="img-thumbnail rounded-circle" id="christian">
+        <label class="btn" id="pfp" type="file" onchange="changePfp(this.id)" style=" margin-right: -48px;">
+          <input type="file" accept="image/png, image/jpeg" hidden>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-pencil-fill mb-2"
+            viewBox="0 0 16 16">
+            <path
+              d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+          </svg>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col text-center mt-2" style="word-break: break-word;">
+        <h1 class="noselect">
+          <span class="name">Dylan Benjamin Ocampo</span>
+          <a class="btn" id="" onclick="enableEditName()" style=" margin-right: -52px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-pencil-fill mb-2"
+              viewBox="0 0 16 16" id="namedt">
+              <path
+                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+            </svg>
+          </a>
+        </h1>
+        <h5 class="text-muted" id="asd"><span class="name">Estudiante de programación</span></h5>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+
+  <!-- Informacion card -->
+
+  <div class="dummy" id="dummyinfo"></div>
+  <section class="" id="info">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <a class="btn btn-primary" id="infoeditbtn" onclick="enableEdit(this.id)">Edit</a>
+              <h5 class="card-title pb-2">Información Personal</h5>
+              <div id="infoContent">
+                <h6 class="card-subtitle mb-3">Ubicación: <span class="text-muted" contenteditable="false"
+                    id="ubi">Buenos Aires, Argentina</span></h6>
+                <h6 class="card-subtitle mb-3">Edad: <span class="text-muted" type="number" contenteditable="false"
+                    id="age">22</span></h6>
+                <h6 class="card-subtitle mb-3">Acerca de mí: <span class="text-muted" contenteditable="false"
+                    id="abtme">Entusiasta de la programación y de la tecnología en general, mi meta es crear
+                    aplicaciones y programas para ayudar a la gente a tener fácil acceso a las cosas que parecen
+                    complicadas de la tecnología</span></h6>
+              </div>
+              <button type="button" class="btn btn-dark mt-2" data-toggle="modal" data-target="#contacto">
+                Contacto
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="contacto" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Contacto</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">Email: <span class="text-muted">benjaocampo1212@gmail.com</span></div>
+                    <div class="modal-footer">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Informacion card -->
+
+  <!-- Educacion / Experiencia -->
+
+  <div class="dummy" id="dummyedu"></div>
+  <section id="edu">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card" id="test">
+            <div class="card-body pb-0" id="edcardbody">
+              <div class="mb-1">
+                <a class="btn btn-primary" id="eduEditbtn" onclick="enableEditEdu(this.id)">Edit</a>
+                <h5 class="card-title">Educación</h5>
+                <ul class="list-unstyled" id="eduList" style="word-break: break-word;">
+                  <li class="media mb-2 mt-3" id="ed0" counter="0">
+                    <img src="https://cdn-icons-png.flaticon.com/512/7170/7170501.png" class="mr-3 mt-2 main-icon"
+                      alt="...">
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-0 noselect" maxlength="110">
+                        <span style="user-select: text;" maxlength="110" id="xd">Escuela
+                          Secundaria E.E.S. N°
+                          2</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                          class="bi bi-pencil-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                          onclick="editEdu(this.id)" id="edtbtn">
+                          <path
+                            d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                          class="bi bi-trash-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                          onclick="delEdu(this.id)" id="dltbtn">
+                          <path
+                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                        </svg>
+                      </h5>
+                      <p class="text-muted mb-1"><span maxlength="130">All my girls vintage.</span></p>
+                      <p class="text-muted mb-1"><span maxlength="130">2012 - 2018</span></p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="text-center mb-3 col-6 btn eduedtbtn"
+                    style="border: 1px solid rgb(255 255 255 / 10%); padding: 0; color: inherit;" data-toggle="modal"
+                    data-target="#eduModal" id="newedbtn" onclick="eInfo(this.id)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                      class="bi bi-plus-circle my-1" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                      <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-1">
+                <h5 class="card-title">Experiencia</h5>
+                <ul class="list-unstyled" id="expList" style="word-break: break-word;">
+                  <li class="media mb-2 mt-3" id="ex0">
+                    <img src="https://cdn-icons-png.flaticon.com/512/7170/7170426.png" class="mr-3 mt-2 main-icon"
+                      alt="...">
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-0 noselect" maxlength="110">
+                        <span maxlength="110" id="xd">Microsoft
+                          2</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                          class="bi bi-pencil-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                          onclick="editEdu(this.id)" id="exedtbtn">
+                          <path
+                            d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                          class="bi bi-trash-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                          onclick="delEdu(this.id)" id="exdltbtn">
+                          <path
+                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                        </svg>
+                      </h5>
+                      <p class="text-muted mb-1"><span maxlength="130">Java pro</span></p>
+                      <p class="text-muted mb-1"><span maxlength="130">2012 - 2018</span></p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="text-center mb-3 col-6 btn eduedtbtn"
+                    style="border: 1px solid rgb(255 255 255 / 10%); padding: 0; color: inherit;" data-toggle="modal"
+                    data-target="#expModal" id="newexbtn" onclick="eInfo(this.id)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                      class="bi bi-plus-circle my-1" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                      <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Educacion / Experiencia -->
+
+  <!-- Hard/Soft Skills -->
+
+  <div class="dummy" id="dummyski"></div>
+  <section id="skills">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body" id="prcard">
+              <a class="btn btn-primary" id="editbtn" onclick="editbtnPr(this.id)">Edit</a>
+              <h5 class="card-title pb-2">Hard & Soft Skills</h5>
+              <div class="lictn">
+                <div counter="0">
+                  <p class="text-center mb-2 noselect">
+                    <span>Resolución de problemas</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                      class="bi bi-pencil-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                      onclick="editPr(this.id)" id="predtbtn0">
+                      <path
+                        d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                      class="bi bi-trash-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                      onclick="delPr(this.id)" id="prdltbtn0">
+                      <path
+                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                    </svg>
+                  </p>
+                  <div class="text-center mb-2">
+                    <input type="range" class="custom-range inputcr" id="valuePr0" step="5" value="0"
+                      onchange="updatePrValue(this.id)" style="width: 50%;">
+                    <input type="color" class="form-control-color ml-2 inputcr" id="colorPr0" value="#ff0000"
+                      title="Choose your color" style="width: 35px; min-width: 35px; position: absolute;"
+                      onchange="updatePrColor(this.id)">
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 55%; background-color: #17a2b8;"
+                      aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+                  </div>
+                </div>
+                <div counter="1">
+                  <p class="text-center mb-2 mt-2 noselect">
+                    <span>Gestión del tiempo</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                      class="bi bi-pencil-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                      onclick="editPr(this.id)" id="predtbtn1">
+                      <path
+                        d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                      class="bi bi-trash-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                      onclick="delPr(this.id)" id="prdltbtn1">
+                      <path
+                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                    </svg>
+                  </p>
+                  <div class="text-center mb-2">
+                    <input type="range" class="custom-range inputcr" id="valuePr1" step="5" value="0"
+                      onchange="updatePrValue(this.id)" style="width: 50%;">
+                    <input type="color" class="form-control-color ml-2 inputcr" id="colorPr1" value="#ff0000"
+                      title="Choose your color" style="width: 35px; min-width: 35px; position: absolute;"
+                      onchange="updatePrColor(this.id)">
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 15%; background-color: #007bff;"
+                      aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">15%</div>
+                  </div>
+                </div>
+                <div counter="2">
+                  <p class="text-center mb-2 mt-2 noselect">
+                    <span>Front End</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                      class="bi bi-pencil-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                      onclick="editPr(this.id)" id="predtbtn2">
+                      <path
+                        d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                      class="bi bi-trash-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                      onclick="delPr(this.id)" id="prdltbtn2">
+                      <path
+                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                    </svg>
+                  </p>
+                  <div class="text-center mb-2">
+                    <input type="range" class="custom-range inputcr" id="valuePr2" step="5" value="0"
+                      onchange="updatePrValue(this.id)" style="width: 50%;">
+                    <input type="color" class="form-control-color ml-2 inputcr" id="colorPr2" value="#ff0000"
+                      title="Choose your color" style="width: 35px; min-width: 35px; position: absolute;"
+                      onchange="updatePrColor(this.id)">
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 35%; background-color: #28a745;"
+                      aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">35%</div>
+                  </div>
+                </div>
+                <div counter="3">
+                  <p class="text-center mb-2 mt-2 noselect">
+                    <span>Back End</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                      class="bi bi-pencil-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                      onclick="editPr(this.id)" id="predtbtn3">
+                      <path
+                        d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                      class="bi bi-trash-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                      onclick="delPr(this.id)" id="prdltbtn3">
+                      <path
+                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                    </svg>
+                  </p>
+                  <div class="text-center mb-2">
+                    <input type="range" class="custom-range inputcr" id="valuePr3" step="5" value="0"
+                      onchange="updatePrValue(this.id)" style="width: 50%;">
+                    <input type="color" class="form-control-color ml-2 inputcr" id="colorPr3" value="#ff0000"
+                      title="Choose your color" style="width: 35px; min-width: 35px; position: absolute;"
+                      onchange="updatePrColor(this.id)">
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 5%; background-color: #dc3545;"
+                      aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">5%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="container" id="prctr">
+                <div class="row justify-content-center">
+                  <div class="text-center mt-3 col-6 btn eduedtbtn"
+                    style="border: 1px solid rgb(255 255 255 / 10%); padding: 0; color: inherit;" data-toggle="modal"
+                    data-target="#prModal" id="newprbtn" onclick="eInfo(this.id)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                      class="bi bi-plus-circle my-1" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                      <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body" id="icard">
+              <h5 class="card-title">Idiomas</h5>
+              <div class="lictn">
+                <div counter="0">
+                  <p class="text-center noselect">
+                    <span>Inglés</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                      class="bi bi-pencil-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                      onclick="editPr(this.id)" id="iedtbtn">
+                      <path
+                        d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                      class="bi bi-trash-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                      onclick="delPr(this.id)" id="idltbtn">
+                      <path
+                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                    </svg>
+                  </p>
+                  <div class="text-center mb-2">
+                    <input type="range" class="custom-range inputcr" id="ivaluePr0" step="5" value="0"
+                      onchange="updatePrValue(this.id)" style="width: 50%;">
+                    <input type="color" class="form-control-color ml-2 inputcr" id="icolorPr0" value="#ff0000"
+                      title="Choose your color" style="width: 35px; min-width: 35px; position: absolute;"
+                      onchange="updatePrColor(this.id)">
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 80%; background-color: #007bff;"
+                      aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="container" id="ictr">
+                <div class="row justify-content-center">
+                  <div class="text-center mt-3 col-6 btn eduedtbtn"
+                    style="border: 1px solid rgb(255 255 255 / 10%); padding: 0; color: inherit;" data-toggle="modal"
+                    data-target="#iModal" id="newibtn" onclick="eInfo(this.id)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                      class="bi bi-plus-circle my-1" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                      <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hard/Soft Skills -->
+
+  <!-- Proyectos -->
+
+  <div class="dummy" id="dummypro"></div>
+  <section id="Proyectos">
+    <div class="container-fluid mb-3">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <a class="btn btn-primary" id="pyeditbtn" onclick="editbtnPy(this.id)">Edit</a>
+              <h5 class="card-title pb-3">Proyectos</h5>
+              <div class="row row-cols-1 row-cols-md-2">
+                <div class="col mb-4" counter="0">
+                  <div class="card">
+                    <label class="mb-0" id="pyimgedtbtn0" onchange="changeImg(this.id)"
+                      style="width: 0px; height: 0px;">
+                      <input type="file" accept="image/png, image/jpeg" hidden>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                        class="bi bi-pencil-fill mb-2 mr-4 mt-4 eduedtbtn"
+                        style="cursor: pointer; position: absolute; right: 1px;" viewBox="0 0 16 16">
+                        <path
+                          d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                      </svg>
+                    </label>
+                    <img src="images/pit.jpg" class="card-img-top" data-toggle="modal" data-target="#xx"
+                      style="cursor: pointer;" onclick="expandImg(this.src , this.id)" alt="..." id="pyimg0">
+                    <div class="card-body">
+                      <h5 style="user-select: none;" class="card-title">
+                        <span style="word-break: break-word;">Portfolio WEB</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                          class="bi bi-pencil-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                          onclick="editPy(this.id)" id="pedtbtn0">
+                          <path
+                            d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                          class="bi bi-trash-fill mb-2 ml-3 eduedtbtn" style="cursor: pointer;" viewBox="0 0 16 16"
+                          onclick="delPy(this.id)" id="pdltbtn0">
+                          <path
+                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                        </svg>
+                      </h5>
+                      <p class="card-text">
+                        <span style="word-break: break-word;">Portfolio WEB realizado aplicando conocimientos aprendidos
+                          en Argentina
+                          Programa.</span>
+                      </p>
+                      <a class="btn btn-primary pybtn" href="#">Visit</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container" id="yctr">
+                <div class="row justify-content-center">
+                  <div class="text-center mt-3 col-6 btn eduedtbtn"
+                    style="border: 1px solid rgb(255 255 255 / 10%); padding: 0; color: inherit;" data-toggle="modal"
+                    data-target="#pyModal" id="newpybtn" onclick="eInfo(this.id)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                      class="bi bi-plus-circle my-1" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                      <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+
+  <!-- Login modal -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="loginModalBody">
+          <form>
+            <div class="form-group text-center">
+              <label for="exampleInputEmail1">Usuario</label>
+              <input type="text" class="form-control mx-auto" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group text-center">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" class="form-control mx-auto" id="exampleInputPassword1">
+            </div>
+            <div class="col text-center">
+              <button type="submit" class="btn btn-primary mt-5 btn-block">Acceder</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login modal -->
+
+  <!-- New Edu modal -->
+
+  <div class="modal fade" id="eduModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Añadir nueva educación</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group mb-3">
+              <input type="text" class="form-control" placeholder="Institución" aria-label="Institución"
+                aria-describedby="basic-addon1" id="ip0" required maxlength="110">
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Título" aria-label="Título"
+                aria-describedby="basic-addon1" id="ip1" maxlength="140">
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Período / yyyy - yyyy" aria-label="Período"
+                aria-describedby="basic-addon1" id="ip2" maxlength="140">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="clearIpts(this.id)"
+              id="educlrbtn">Cancelar</button>
+            <button type="submit" class="btn btn-success" onclick="newEdu(this.id)" id="eduSmtBtn">Agregar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Edu modal -->
+
+  <!-- New Exp modal -->
+
+  <div class="modal fade" id="expModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Añadir nueva experiencia</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group mb-3">
+              <input type="text" class="form-control" placeholder="Empresa" aria-label="Empresa"
+                aria-describedby="basic-addon1" id="eip0" required maxlength="110">
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Puesto" aria-label="Puesto"
+                aria-describedby="basic-addon1" id="eip1" maxlength="140">
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Período / yyyy - yyyy" aria-label="Período"
+                aria-describedby="basic-addon1" id="eip2" maxlength="140">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="clearIpts(this.id)"
+              id="expclrBtn">Cancelar</button>
+            <button type="submit" class="btn btn-success" onclick="newEdu(this.id)" id="expSmtBtn">Agregar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Exp modal -->
+
+  <!-- New PR modal -->
+
+  <div class="modal fade" id="prModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Añadir nueva skill</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group mb-3">
+              <input type="text" class="form-control" placeholder="Skill" aria-label="Skill"
+                aria-describedby="basic-addon1" id="pip0" required maxlength="110">
+            </div>
+            <div class="text-center mb-2">
+              <p style="margin-bottom: 0px; margin-top: 0px; margin-left: 5px; float: left;">0%</p>
+              <input type="range" class="custom-range" id="labelValuePr" step="5" value="0"
+                onchange="upPrLabel(this.id)" style="width: 75%;">
+
+              <input type="color" class="form-control-color ml-2" id="mcolorPr0" value="#ff0000"
+                title="Choose your color" style="width: 35px; min-width: 35px;">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="clearIpts(this.id)"
+              id="prclrBtn">Cancelar</button>
+            <button type="submit" class="btn btn-success" onclick="newPr(this.id)" id="prSmtBtn">Agregar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- New PR modal -->
+
+  <!-- New Idioma modal -->
+
+  <div class="modal fade" id="iModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Añadir nuevo idioma</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group mb-3">
+              <input type="text" class="form-control" placeholder="Skill" aria-label="Skill"
+                aria-describedby="basic-addon1" id="iip0" required maxlength="110">
+            </div>
+            <div class="text-center mb-2">
+              <p style="margin-bottom: 0px; margin-top: 0px; margin-left: 5px; float: left;">0%</p>
+              <input type="range" class="custom-range" id="labeliValuePr0" step="5" value="0"
+                onchange="upPrLabel(this.id)" style="width: 75%;">
+
+              <input type="color" class="form-control-color ml-2" id="icolorPr0" value="#ff0000"
+                title="Choose your color" style="width: 35px; min-width: 35px;">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="clearIpts(this.id)"
+              id="iclrBtn">Cancelar</button>
+            <button type="submit" class="btn btn-success" onclick="newPr(this.id)" id="iSmtBtn">Agregar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Idioma modal -->
+
+  <!-- IMG expand -->
+
+  <div class="modal fade" id="xx" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: unset;">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <img src="images/zzzwth.png" class="card-img-top" alt="..." id="modalimg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMG expand -->
+
+
+  <!-- New Proyecto -->
+
+  <div class="modal fade" id="pyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Añadir nuevo proyecto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <label for="pyip0">Imagen:</label>
+            <div class="form-group mb-3">
+              <input type="file" class="" aria-describedby="basic-addon1" id="pyimg" accept="image/png, image/jpeg">
+            </div>
+            <div class="form-group mb-3">
+              <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre"
+                aria-describedby="basic-addon1" id="pyip0" required maxlength="300">
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Descripción" aria-label="Descripción"
+                aria-describedby="basic-addon1" id="pyip1" maxlength="300">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="clearIpts(this.id)"
+              id="pyclrBtn">Cancelar</button>
+            <button type="submit" class="btn btn-success" onclick="newPy(this.id)" id="pySmtBtn">Agregar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Proyecto -->
+
+  <script src="index.js"></script>
+  <script src="newElements.js"></script>
+  <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
