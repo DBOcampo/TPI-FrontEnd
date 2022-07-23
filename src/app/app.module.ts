@@ -8,6 +8,7 @@ import { NavbarLoginBtnComponent } from './components/navbar-login-btn/navbar-lo
 import { MainComponent } from './components/main/main.component';
 import { MainChangepfpComponent } from './components/main-changepfp/main-changepfp.component';
 import { MainInfoComponent } from './components/main-info/main-info.component';
+import { LoginModalComponent } from './components/login-modal/login-modal.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MainInfoComponent } from './components/main-info/main-info.component';
     NavbarLoginBtnComponent,
     MainComponent,
     MainChangepfpComponent,
-    MainInfoComponent
+    MainInfoComponent,
+    LoginModalComponent
   ],
   imports: [
     BrowserModule,

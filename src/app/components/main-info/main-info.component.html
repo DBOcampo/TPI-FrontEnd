@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col text-center mt-2" style="word-break: break-word;">
             <h1 class="noselect">
-                <span class="name">Dylan Benjamin Ocampo</span>
-                <a class="btn" id="" onclick="enableEditName()" style=" margin-right: -52px;">
+                <span class="name">{{name}}</span>
+                <a class="btn" id="" (click)="enableEditName()" style=" margin-right: -52px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
                         class="bi bi-pencil-fill mb-2" viewBox="0 0 16 16" id="namedt">
                         <path
@@ -11,7 +11,7 @@
                     </svg>
                 </a>
             </h1>
-            <h5 class="text-muted" id="asd"><span class="name">Estudiante de programación</span></h5>
+            <h5 class="text-muted" id="asd"><span class="name">{{ocupacion}}</span></h5>
         </div>
     </div>
 </div>
