@@ -3,7 +3,7 @@
         <div class="col-12 pr-0 pl-0">
             <div class="container-fluid px-0" style="width: 100%;">
                 <div style="position: relative; top: 60px;">
-                    <label class="btn mr-3 mt-2" id="banner" onchange="changeImg(this.id)"
+                    <label class="btn mr-3 mt-2" id="banner" (change)="changeImg($event.target)"
                         style="position: relative; float: right;" id="bnrbtn">
                         <input type="file" accept="image/png, image/jpeg" hidden>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
@@ -13,10 +13,8 @@
                         </svg>
                     </label>
                 </div>
-                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                    id="main-img">
+                <img [src]="img" id="main-img">
             </div>
-            <img src="https://i.ibb.co/0VhyZFv/hack.webp" class="img-thumbnail rounded-circle" id="christian">
             <changepfp></changepfp>
         </div>
     </div>

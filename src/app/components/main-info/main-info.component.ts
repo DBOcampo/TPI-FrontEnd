@@ -9,7 +9,7 @@ export class MainInfoComponent implements OnInit {
 
   name: string = 'Dylan Benjamin Ocampo';
   ocupacion: string = 'Estudiante de programación';
-  editable: object = {'border': '1px solid', 'borderRadius': '6px', 'display': 'inline'};
+  editable: object = {'border': '1px solid', 'borderRadius': '6px', 'display': 'inline-block'};
   isActive: boolean = false;
   constructor() { }
 

@@ -1,0 +1,46 @@
+<div class="dummy" id="dummyinfo"></div>
+<section class="" id="info">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <info-edt-btn (enableEvent)="recieveEnable($event)"></info-edt-btn>
+                        <h5 class="card-title pb-2">Información Personal</h5>
+                        <div id="infoContent">
+                            <h6 class="card-subtitle mb-3">Ubicación: <span [ngStyle]="enabled ? editable : {}"
+                                    class="text-muted" [contentEditable]="enabled" id="ubi">{{ubication}}</span></h6>
+                            <h6 class="card-subtitle mb-3">Edad: <span [ngStyle]="enabled ? editable : {}"
+                                    class="text-muted" type="number" [contentEditable]="enabled" id="age">{{age}}</span>
+                            </h6>
+                            <h6 class="card-subtitle mb-3">Acerca de mí: <span [ngStyle]="enabled ? editable : {}"
+                                    class="text-muted" [contentEditable]="enabled" id="abtme">{{aboutme}}</span></h6>
+                        </div>
+                        <button type="button" class="btn btn-dark mt-2" data-toggle="modal" data-target="#contacto">
+                            Contacto
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="contacto" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Contacto</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">Email: <span
+                                            class="text-muted">benjaocampo1212@gmail.com</span></div>
+                                    <div class="modal-footer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
