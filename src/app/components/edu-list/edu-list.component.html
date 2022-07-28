@@ -1,0 +1,21 @@
+<div class="mb-1">
+    <h5 class="card-title">Educacion</h5>
+    <ul class="list-unstyled" #eduList id="eduList" style="word-break: break-word;">
+        <edu-item *ngFor="let li of listI" [listL]="li">
+        </edu-item>
+    </ul>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="text-center mb-3 col-6 btn eduedtbtn" [style.display]="enabled ? 'initial' : 'none'"
+            style="border: 1px solid rgb(255 255 255 / 10%); padding: 0; color: inherit;" data-toggle="modal"
+            data-target="#eduModal" id="newedbtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                class="bi bi-plus-circle my-1" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path
+                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+            </svg>
+        </div>
+    </div>
+</div>

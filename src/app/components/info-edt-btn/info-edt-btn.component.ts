@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'info-edt-btn',
+  selector: 'edt-btn',
   templateUrl: './info-edt-btn.component.html',
   styleUrls: ['./info-edt-btn.component.css']
 })
