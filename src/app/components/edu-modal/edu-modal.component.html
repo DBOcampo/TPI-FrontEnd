@@ -11,23 +11,23 @@
                 <div class="modal-body">
                     <div class="form-group mb-3">
                         <input type="text" class="form-control" name="institucion" placeholder="Institución"
-                            aria-label="Institución" aria-describedby="basic-addon1" id="ip0" required maxlength="110"
-                            [(ngModel)]="educacion.institucion">
+                            aria-label="Institución" aria-describedby="basic-addon1" id="institucion" required
+                            maxlength="110" [(ngModel)]="institucion">
                     </div>
                     <div class="input-group mb-3">
                         <input type="text" name="titulo" class="form-control" placeholder="Título" aria-label="Título"
-                            aria-describedby="basic-addon1" id="ip1" maxlength="140" [(ngModel)]="educacion.titulo">
+                            aria-describedby="basic-addon1" id="titulo" maxlength="140" [(ngModel)]="titulo">
                     </div>
                     <div class="input-group mb-3">
                         <input type="text" name="periodo" class="form-control" placeholder="Período / yyyy - yyyy"
-                            aria-label="Período" aria-describedby="basic-addon1" id="ip2" maxlength="140"
-                            [(ngModel)]="educacion.periodo">
+                            aria-label="Período" aria-describedby="basic-addon1" id="periodo" maxlength="140"
+                            [(ngModel)]="periodo">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal" onclick=""
                         id="educlrbtn">Cancelar</button>
-                    <button type="submit" class="btn btn-success" onclick="" id="eduSmtBtn">Agregar</button>
+                    <button type="submit" class="btn btn-success" id="eduSmtBtn">Agregar</button>
                 </div>
             </form>
         </div>

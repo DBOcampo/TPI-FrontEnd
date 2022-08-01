@@ -1,0 +1,40 @@
+{
+  "eduList": [
+    {
+      "id": 1,
+      "institucion": "Escuela Secundaria E.E. N° 5",
+      "titulo": "default",
+      "periodo": "2012 - 2018"
+    },
+    {
+      "id": 2,
+      "institucion": "Not Escuelasa",
+      "titulo": "zzzzzzz",
+      "periodo": "2000 - 2009"
+    },
+    {
+      "id": 3,
+      "institucion": "SI Escuelon",
+      "titulo": "NO SLEEPING HERE",
+      "periodo": "1182 - 1189"
+    },
+    {
+      "id": 4,
+      "institucion": "zz Escuela",
+      "titulo": "SLEEP HERE",
+      "periodo": "1975 - 1979"
+    },
+    {
+      "id": 5,
+      "institucion": "gg",
+      "titulo": "Fuck with the gang get a halo",
+      "periodo": "Make him lucid dream"
+    },
+    {
+      "id": 6,
+      "institucion": "Proyect Buildings",
+      "titulo": "Drug Dealing",
+      "periodo": "Black kid"
+    }
+  ]
+}

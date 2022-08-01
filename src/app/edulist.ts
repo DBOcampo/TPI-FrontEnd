@@ -1,5 +1,5 @@
 export interface List {
-    id: number;
+    id?: number;
     institucion: string;
     titulo: string;
     periodo: string;

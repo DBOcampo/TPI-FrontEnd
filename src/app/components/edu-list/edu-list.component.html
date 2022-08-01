@@ -1,7 +1,7 @@
 <div class="mb-1">
     <h5 class="card-title">Educacion</h5>
     <ul class="list-unstyled" #eduList id="eduList" style="word-break: break-word;">
-        <edu-item *ngFor="let li of listI" [listL]="li">
+        <edu-item *ngFor="let li of listI" [listL]="li" (onDeleteList)="deleteList(li)" (onEditList)="editList($event)">
         </edu-item>
     </ul>
 </div>
@@ -19,3 +19,4 @@
         </div>
     </div>
 </div>
+<edu-modal (onNewList)="addList($event)"></edu-modal>
