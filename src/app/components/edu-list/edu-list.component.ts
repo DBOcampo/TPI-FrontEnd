@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EduListService } from 'src/app/services/edu-list.service';
 import { EduDataServiceService } from 'src/app/services/edu-data-service.service';
 import { List } from 'src/app/edulist';
@@ -11,10 +11,9 @@ import { List } from 'src/app/edulist';
 })
 export class EduListComponent implements OnInit {
 
-  @Output() onEdit: EventEmitter<List> = new EventEmitter
-
   listI: List[] = [];
   enabled: boolean = true
+  newValue: List = this.listI[0]
   edtEnabled: boolean = false
   editable: object = { 'border': '1px solid', 'borderRadius': '6px', 'display': 'inline-block' };
 
@@ -28,11 +27,6 @@ export class EduListComponent implements OnInit {
     this.data2.currentData2.subscribe(d => this.edtEnabled = d)
   }
 
-  enableEdit() {
-    this.edtEnabled = !this.edtEnabled
-    console.log("changed edtEnabled to " + this.edtEnabled)
-  }
-
   deleteList(list: List) {
     this.listData.deleteList(list).subscribe(() =>
       this.listI = this.listI.filter(t => t.id !== list.id))
@@ -42,9 +36,7 @@ export class EduListComponent implements OnInit {
     this.listData.addList(list).subscribe((list) => this.listI.push(list))
   }
 
-  editList(newValue: List) {
-    this.edtEnabled = !this.edtEnabled
-    this.listData.editList(newValue).subscribe()
-    this.onEdit.emit(newValue)
+  editList(list: List) {
+    this.listData.editList(list).subscribe()
   }
 }

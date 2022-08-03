@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { EduDataServiceService } from 'src/app/services/edu-data-service.service';
-import { EduListService } from 'src/app/services/edu-list.service';
 import { List } from 'src/app/edulist';
 
 @Component({
@@ -14,7 +13,7 @@ export class EduComponent implements OnInit, OnDestroy {
   enabled: boolean = true
   edtState: boolean = false
   subscription!: Subscription
-  constructor(private data: EduDataServiceService, private data2: EduDataServiceService, private list: EduListService) { }
+  constructor(private data: EduDataServiceService, private data2: EduDataServiceService) { }
 
   ngOnInit(): void {
     this.subscription = this.data.currentData.subscribe(state => this.enabled = state)
@@ -31,20 +30,5 @@ export class EduComponent implements OnInit, OnDestroy {
     }
     this.enabled = infoEnable
     this.data.changeData(this.enabled)
-    try {
-      if (this.enabled !== true) {
-        this.list.editList(this.newList).subscribe
-        console.log('new list sent!!!')
-      }
-    }
-    catch {
-      return
-    }
   }
-
-  console(a: List) {
-    this.newList = a
-    console.log(this.newList, 'FROM EDU console')
-  }
-
 }

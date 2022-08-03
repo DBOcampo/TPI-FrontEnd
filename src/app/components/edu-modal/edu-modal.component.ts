@@ -15,7 +15,7 @@ export class EduModalComponent implements OnInit {
   institucion: string = ''
   titulo: string = ''
   periodo: string = ''
-
+  submitting!: boolean;
   listUL: any
   subscription!: Subscription
 
@@ -25,16 +25,19 @@ export class EduModalComponent implements OnInit {
     this.subscription = this.list.currentData.subscribe(a => this.listUL = a)
   }
 
-  submit() {
+  submit(): void {
     if (this.institucion.length === 0) {
       alert("Please add a Institucion")
       return
     }
-
     const { institucion, titulo, periodo } = this
     const newList = { institucion, titulo, periodo }
-
     this.onNewList.emit(newList)
+    setTimeout(() => { this.institucion = '', this.titulo = '', this.periodo = '' }, 1)
+  }
+
+  clearipts() {
+    this.institucion = '', this.titulo = '', this.periodo = ''
   }
 
 }
