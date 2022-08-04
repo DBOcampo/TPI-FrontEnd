@@ -1,6 +1,6 @@
 export interface skillhs {
     id?: number;
     skill: string;
-    porcetanje: number;
+    porcentaje: number;
     color: string;
 }

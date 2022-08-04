@@ -23,6 +23,7 @@ import { ExModalComponent } from './components/ex-modal/ex-modal.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { SkillHSComponent } from './components/skill-hs/skill-hs.component';
 import { SkillHSItemComponent } from './components/skill-hs-item/skill-hs-item.component';
+import { SkillHsModalComponent } from './components/skill-hs-modal/skill-hs-modal.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { SkillHSItemComponent } from './components/skill-hs-item/skill-hs-item.c
     ExModalComponent,
     SkillsComponent,
     SkillHSComponent,
-    SkillHSItemComponent
+    SkillHSItemComponent,
+    SkillHsModalComponent
   ],
   imports: [
     BrowserModule,

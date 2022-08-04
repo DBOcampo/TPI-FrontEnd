@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { List } from 'src/app/mocks/edulist';
 import { exList } from 'src/app/mocks/exlist';
 import { EduDataServiceService } from 'src/app/services/edu-data-service.service';
 

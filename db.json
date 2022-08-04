@@ -7,10 +7,10 @@
       "periodo": "2012 - 2018"
     },
     {
+      "id": 2,
       "institucion": "Never go broke",
       "titulo": "Rob me a nigga",
-      "periodo": "BANK-ROLLS",
-      "id": 2
+      "periodo": "BANK-ROLLS"
     }
   ],
   "exList": [
@@ -21,12 +21,12 @@
       "periodo": "2012 - 2018"
     }
   ],
-  "skillhs":[
+  "skillhs": [
     {
       "id": 1,
       "skill": "Resolución de problemas",
       "porcentaje": 55,
-      "color": "#17a2b8"
+      "color": "#419587"
     },
     {
       "id": 2,
@@ -45,6 +45,12 @@
       "skill": "Back End",
       "porcentaje": 5,
       "color": "#dc3545"
+    },
+    {
+      "skill": "New Skill ",
+      "porcentaje": 70,
+      "color": "#6b41b9",
+      "id": 5
     }
   ]
 }

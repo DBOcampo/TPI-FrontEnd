@@ -1,0 +1,33 @@
+<div class="modal fade" id="prModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Añadir nueva skill</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group mb-3">
+                        <input type="text" name="skill" class="form-control" placeholder="Skill" aria-label="Skill"
+                            aria-describedby="basic-addon1" id="pip0" [(ngModel)]="skill" required maxlength="110">
+                    </div>
+                    <div class="text-center mb-2">
+                        <p style="margin-bottom: 0px; margin-top: 0px; margin-left: 5px; float: left;">{{porcentaje}}%
+                        </p>
+                        <input name="porcentaje" type="range" class="custom-range" id="labelValuePr" step="5"
+                            [(ngModel)]="porcentaje" value="0" style="width: 75%;">
+
+                        <input type="color" name="color" class="form-control-color ml-2" id="mcolorPr0" value="#ff0000"
+                            title="Choose your color" [(ngModel)]="color" style="width: 35px; min-width: 35px;">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="prclrBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-success" id="prSmtBtn" (click)="onSubmit()">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
