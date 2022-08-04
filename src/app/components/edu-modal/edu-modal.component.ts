@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { EduDataServiceService } from 'src/app/services/edu-data-service.service';
 import { Subscription } from 'rxjs';
-import { List } from 'src/app/edulist';
+import { List } from 'src/app/mocks/edulist';
 
 @Component({
   selector: 'edu-modal',
@@ -33,6 +33,7 @@ export class EduModalComponent implements OnInit {
     const { institucion, titulo, periodo } = this
     const newList = { institucion, titulo, periodo }
     this.onNewList.emit(newList)
+    console.log(newList, 'from modal')
     setTimeout(() => { this.institucion = '', this.titulo = '', this.periodo = '' }, 1)
   }
 

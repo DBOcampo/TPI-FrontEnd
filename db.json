@@ -2,9 +2,49 @@
   "eduList": [
     {
       "id": 1,
-      "institucion": "Escuela Secundaria E.E.S. N° 3",
+      "institucion": "Escuela Secundaria E.E.S. N° 2",
       "titulo": "All my girls vintage.",
       "periodo": "2012 - 2018"
+    },
+    {
+      "institucion": "Never go broke",
+      "titulo": "Rob me a nigga",
+      "periodo": "BANK-ROLLS",
+      "id": 2
+    }
+  ],
+  "exList": [
+    {
+      "id": 1,
+      "empresa": "Microsoftie",
+      "puesto": "Java proz",
+      "periodo": "2012 - 2018"
+    }
+  ],
+  "skillhs":[
+    {
+      "id": 1,
+      "skill": "Resolución de problemas",
+      "porcentaje": 55,
+      "color": "#17a2b8"
+    },
+    {
+      "id": 2,
+      "skill": "Gestión del tiempo",
+      "porcentaje": 15,
+      "color": "#007bff"
+    },
+    {
+      "id": 3,
+      "skill": "Front End",
+      "porcentaje": 35,
+      "color": "#28a745"
+    },
+    {
+      "id": 4,
+      "skill": "Back End",
+      "porcentaje": 5,
+      "color": "#dc3545"
     }
   ]
 }

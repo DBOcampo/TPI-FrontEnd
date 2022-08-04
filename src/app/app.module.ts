@@ -17,6 +17,12 @@ import { EduComponent } from './components/edu/edu.component';
 import { EduListComponent } from './components/edu-list/edu-list.component';
 import { EduModalComponent } from './components/edu-modal/edu-modal.component';
 import { EduItemComponent } from './components/edu-item/edu-item.component';
+import { ExListComponent } from './components/ex-list/ex-list.component';
+import { ExItemComponent } from './components/ex-item/ex-item.component';
+import { ExModalComponent } from './components/ex-modal/ex-modal.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { SkillHSComponent } from './components/skill-hs/skill-hs.component';
+import { SkillHSItemComponent } from './components/skill-hs-item/skill-hs-item.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,13 @@ import { EduItemComponent } from './components/edu-item/edu-item.component';
     EduComponent,
     EduListComponent,
     EduModalComponent,
-    EduItemComponent
+    EduItemComponent,
+    ExListComponent,
+    ExItemComponent,
+    ExModalComponent,
+    SkillsComponent,
+    SkillHSComponent,
+    SkillHSItemComponent
   ],
   imports: [
     BrowserModule,

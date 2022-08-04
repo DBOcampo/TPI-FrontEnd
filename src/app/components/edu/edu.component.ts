@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { EduDataServiceService } from 'src/app/services/edu-data-service.service';
-import { List } from 'src/app/edulist';
+import { List } from 'src/app/mocks/edulist';
 
 @Component({
   selector: 'edu',

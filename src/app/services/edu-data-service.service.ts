@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { List } from '../edulist';
-import { LIST } from '../mock-edulist';
+import { List } from '../mocks/edulist';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,7 @@ export class EduDataServiceService {
   currentData = this.dataSource.asObservable();
   private dataSource2 = new BehaviorSubject(false);
   currentData2 = this.dataSource2.asObservable();
-  private dataSource3 = new BehaviorSubject(LIST[0]);
+  private dataSource3 = new BehaviorSubject({});
   currentData3 = this.dataSource3.asObservable();
 
 

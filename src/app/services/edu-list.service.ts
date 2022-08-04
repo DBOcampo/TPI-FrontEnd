@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { List } from '../edulist';
+import { List } from '../mocks/edulist';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const httpOptions = {
@@ -24,11 +24,13 @@ export class EduListService {
   }
 
   deleteList(list: List): Observable<List> {
+    console.log(list, 'from service')
     const url = `${this.apiURL}/${list.id}`
     return this.http.delete<List>(url)
   }
 
   addList(list: List): Observable<List> {
+    console.log(list, 'from service')
     return this.http.post<List>(this.apiURL, list, httpOptions)
   }
 

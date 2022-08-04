@@ -1,6 +1,5 @@
 import { Component, Input, OnDestroy, OnInit, Output, EventEmitter } from '@angular/core';
-import { LIST } from 'src/app/mock-edulist';
-import { List } from 'src/app/edulist';
+import { List } from 'src/app/mocks/edulist';
 import { Subscription } from 'rxjs';
 import { EduDataServiceService } from 'src/app/services/edu-data-service.service';
 
@@ -11,7 +10,7 @@ import { EduDataServiceService } from 'src/app/services/edu-data-service.service
 })
 export class EduItemComponent implements OnInit, OnDestroy {
 
-  @Input() listL: List = LIST[0];
+  @Input() listL!: List;
   @Output() onDeleteList: EventEmitter<List> = new EventEmitter;
   @Output() onEditList: EventEmitter<List> = new EventEmitter;
   enabled: boolean = false

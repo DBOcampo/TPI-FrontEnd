@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EduListService } from 'src/app/services/edu-list.service';
 import { EduDataServiceService } from 'src/app/services/edu-data-service.service';
-import { List } from 'src/app/edulist';
+import { List } from 'src/app/mocks/edulist';
 
 
 @Component({
