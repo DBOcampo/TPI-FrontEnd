@@ -9,7 +9,7 @@ import { skillhs } from 'src/app/mocks/skill-hs';
 export class SkillHsModalComponent implements OnInit {
 
   @Output() onAddSkill: EventEmitter<skillhs> = new EventEmitter
-  skill!: string
+  skill: string = ''
   porcentaje: number = 0
   color: string = '#000000'
 
@@ -30,7 +30,7 @@ export class SkillHsModalComponent implements OnInit {
     const { skill, porcentaje, color } = this
     const newSkills = { skill, porcentaje, color }
     this.onAddSkill.emit(newSkills)
-    setTimeout(this.skill = '', this.porcentaje = 0, this.color = '#000000', 1)
+    setTimeout(() => { this.skill = '', this.porcentaje = 0, this.color = '#000000' }, 1)
     console.log(newSkills)
   }
 }

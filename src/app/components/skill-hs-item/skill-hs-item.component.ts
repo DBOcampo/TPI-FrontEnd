@@ -8,6 +8,7 @@ import { SkillsDataService } from 'src/app/services/skills-data.service';
   styleUrls: ['./skill-hs-item.component.css']
 })
 export class SkillHSItemComponent implements OnInit {
+  newText: string = ''
   @Output() onEditSkill: EventEmitter<skillhs> = new EventEmitter
   @Output() onDeleteSkill: EventEmitter<skillhs> = new EventEmitter
   @Input() enabled: boolean = false
@@ -18,13 +19,13 @@ export class SkillHSItemComponent implements OnInit {
   constructor(private newData: SkillsDataService) { }
 
   ngOnInit(): void {
-    this.newData.currentData.subscribe(d => this.edtEnabled = d)
+    this.newData.currentEdtBtnData.subscribe(d => this.edtEnabled = d)
   }
 
-  enableEdit(skill: skillhs) {
+  enableEdit(skill: skillhs, newText: string) {
     this.edtEnabled = !this.edtEnabled
     if (this.edtEnabled == false) {
-      const newValue: skillhs = { skill: this.skill.skill, porcentaje: this.skill.porcentaje, color: this.skill.color }
+      const newValue: skillhs = { skill: newText, porcentaje: this.skill.porcentaje, color: this.skill.color }
       skill.skill = newValue.skill, skill.porcentaje = newValue.porcentaje, skill.color = newValue.color
       this.onEditSkill.emit(skill)
     }

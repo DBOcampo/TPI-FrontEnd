@@ -6,12 +6,19 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SkillsDataService {
 
-  private dataSource = new BehaviorSubject(false);
-  currentData = this.dataSource.asObservable();
+  private edtBtnSource = new BehaviorSubject(false);
+  currentEdtBtnData = this.edtBtnSource.asObservable();
+
+  private btnSource = new BehaviorSubject(false);
+  currentBtnData = this.btnSource.asObservable();
 
   constructor() { }
 
-  changeData(data: boolean) {
-    this.dataSource.next(data)
+  changeEdtBtnData(data: boolean) {
+    this.edtBtnSource.next(data)
+  }
+
+  changeBtnData(data: boolean) {
+    this.btnSource.next(data)
   }
 }

@@ -1,0 +1,37 @@
+<div class="modal fade" id="iModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Añadir nuevo idioma</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group mb-3">
+                        <input type="text" name="idioma" ngDefaultControl class="form-control" placeholder="Idioma"
+                            aria-label="Skill" [(ngModel)]="idioma" ngDefaultControl aria-describedby="basic-addon1"
+                            id="iip0" required maxlength="110">
+                    </div>
+                    <div class="text-center mb-2">
+                        <p style="margin-bottom: 0px; margin-top: 0px; margin-left: 5px; float: left;">{{porcentaje}}%
+                        </p>
+                        <input [(ngModel)]="porcentaje" ngDefaultControl type="range" name="porcentaje"
+                            class="custom-range" id="labeliValuePr0" step="5" value="0" style="width: 75%;">
+
+                        <input [(ngModel)]="color" type="color" ngDefaultControl name="name"
+                            class="form-control-color ml-2" id="icolorPr0" value="#ff0000" title="Choose your color"
+                            style="width: 35px; min-width: 35px;">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="iclrBtn"
+                        (click)="clearipts()">Cancelar</button>
+                    <button [attr.data-dismiss]="this.idioma.length === 0 ? null : 'modal' " type="submit"
+                        class="btn btn-success" id="iSmtBtn" (click)="submit()">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

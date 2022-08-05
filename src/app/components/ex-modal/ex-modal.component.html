@@ -12,16 +12,17 @@
                     <div class="form-group mb-3">
                         <input type="text" name="empresa" class="form-control" placeholder="Empresa"
                             aria-label="Empresa" aria-describedby="basic-addon1" id="eip0" required maxlength="110"
-                            [(ngModel)]="empresa">
+                            [(ngModel)]="empresa" ngDefaultControl>
                     </div>
                     <div class="input-group mb-3">
                         <input type="text" name="puesto" class="form-control" placeholder="Puesto" aria-label="Puesto"
-                            aria-describedby="basic-addon1" id="eip1" maxlength="140" [(ngModel)]="puesto">
+                            aria-describedby="basic-addon1" id="eip1" maxlength="140" [(ngModel)]="puesto"
+                            ngDefaultControl>
                     </div>
                     <div class="input-group mb-3">
                         <input type="text" name="periodo" class="form-control" placeholder="Período / yyyy - yyyy"
                             aria-label="Período" aria-describedby="basic-addon1" id="eip2" maxlength="140"
-                            [(ngModel)]="periodo">
+                            [(ngModel)]="periodo" ngDefaultControl>
                     </div>
                 </div>
                 <div class="modal-footer">

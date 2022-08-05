@@ -16,8 +16,8 @@
   "exList": [
     {
       "id": 1,
-      "empresa": "Microsoftie",
-      "puesto": "Java proz",
+      "empresa": "Microsoft",
+      "puesto": "Java pro",
       "periodo": "2012 - 2018"
     }
   ],
@@ -45,12 +45,26 @@
       "skill": "Back End",
       "porcentaje": 5,
       "color": "#dc3545"
+    }
+  ],
+  "skillidi": [
+    {
+      "id": 1,
+      "idioma": "Inglés",
+      "porcentaje": 80,
+      "color": "#007bff"
     },
     {
-      "skill": "New Skill ",
-      "porcentaje": 70,
-      "color": "#6b41b9",
-      "id": 5
+      "idioma": "Whatever",
+      "porcentaje": 90,
+      "color": "#983434",
+      "id": 2
+    },
+    {
+      "idioma": "999",
+      "porcentaje": 90,
+      "color": "#7d1a7f",
+      "id": 3
     }
   ]
 }

@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body" id="icard">
+                <h5 class="card-title">Idiomas</h5>
+                <div class="lictn">
+                    <skill-idi-item *ngFor="let skill of skills" [skills]="skill" (onDeleteSkill)="deleteSkill($event)"
+                        (onEditSkill)="editSkill($event)">
+                    </skill-idi-item>
+                </div>
+                <div class="container" id="ictr">
+                    <div class="row justify-content-center">
+                        <div class="text-center mt-3 col-6 btn eduedtbtn"
+                            style="border: 1px solid rgb(255 255 255 / 10%); padding: 0; color: inherit;"
+                            data-toggle="modal" data-target="#iModal" id="newibtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                class="bi bi-plus-circle my-1" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path
+                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<skill-idi-modal (onSubmit)="addSkill($event)"></skill-idi-modal>

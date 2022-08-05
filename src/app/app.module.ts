@@ -24,6 +24,9 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { SkillHSComponent } from './components/skill-hs/skill-hs.component';
 import { SkillHSItemComponent } from './components/skill-hs-item/skill-hs-item.component';
 import { SkillHsModalComponent } from './components/skill-hs-modal/skill-hs-modal.component';
+import { SkillIdiComponent } from './components/skill-idi/skill-idi.component';
+import { SkillIdiItemComponent } from './components/skill-idi-item/skill-idi-item.component';
+import { SkillIdiModalComponent } from './components/skill-idi-modal/skill-idi-modal.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { SkillHsModalComponent } from './components/skill-hs-modal/skill-hs-moda
     SkillsComponent,
     SkillHSComponent,
     SkillHSItemComponent,
-    SkillHsModalComponent
+    SkillHsModalComponent,
+    SkillIdiComponent,
+    SkillIdiItemComponent,
+    SkillIdiModalComponent
   ],
   imports: [
     BrowserModule,

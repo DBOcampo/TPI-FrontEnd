@@ -20,13 +20,14 @@ export class SkillHSComponent implements OnInit {
       this.skills = skills
       console.log(this.skills)
     })
-    this.newData.currentData.subscribe(d => this.enabled = d)
+    this.newData.currentEdtBtnData.subscribe(d => this.enabled = d)
   }
 
   recieveEnable(data: boolean) {
     this.enabled = data
+    this.newData.changeBtnData(data)
     if (this.enabled === false) {
-      this.newData.changeData(false)
+      this.newData.changeEdtBtnData(false)
     }
     console.log(this.enabled)
   }
