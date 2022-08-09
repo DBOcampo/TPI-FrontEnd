@@ -1,0 +1,39 @@
+<div class="modal fade" id="pyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Añadir nuevo proyecto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form>
+        <div class="modal-body">
+          <label for="pyip0">Imagen:</label>
+          <div class="form-group mb-3">
+            <input type="file" class="" aria-describedby="basic-addon1" id="pyimg" accept="image/png, image/jpeg"
+              (change)="fileUpdate($event)">
+          </div>
+          <div class="form-group mb-3">
+            <input type="text" name="nombre" [(ngModel)]="nombre" class="form-control" placeholder="Nombre"
+              aria-label="Nombre" aria-describedby="basic-addon1" id="pyip0" required maxlength="300">
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" name="descripcion" [(ngModel)]="descripcion" class="form-control"
+              placeholder="Descripción" aria-label="Descripción" aria-describedby="basic-addon1" id="pyip1"
+              maxlength="300">
+          </div>
+          <div class="form-group mb-3">
+            <input type="text" name="link" [(ngModel)]="link" class="form-control" placeholder="Link" aria-label="Link"
+              aria-describedby="basic-addon1" required maxlength="300">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" id="pyclrBtn">Cancelar</button>
+          <button [attr.data-dismiss]="this.nombre.length === 0 ? null : 'modal'" type="submit" class="btn btn-success"
+            id="pySmtBtn" (click)="onSubmit()">Agregar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { skillidi } from 'src/app/mocks/skill-idi';
 import { SkillIdiService } from 'src/app/services/skill-idi.service';
+import { SkillsDataService } from 'src/app/services/skills-data.service';
 
 @Component({
   selector: 'skill-idi',
@@ -10,14 +11,17 @@ import { SkillIdiService } from 'src/app/services/skill-idi.service';
 export class SkillIdiComponent implements OnInit {
 
   skills!: skillidi[]
+  enabled: boolean = false
 
-  constructor(private skillData: SkillIdiService) { }
+  constructor(private skillData: SkillIdiService, private newData: SkillsDataService) { }
 
   ngOnInit(): void {
     this.skillData.getSkills().subscribe((skill) => {
       this.skills = skill
       console.log(this.skills)
     })
+
+    this.newData.currentBtnData.subscribe(d => this.enabled = d)
   }
 
   deleteSkill(skill: skillidi) {
@@ -34,5 +38,4 @@ export class SkillIdiComponent implements OnInit {
   editSkill(skill: skillidi) {
     this.skillData.editSkill(skill).subscribe()
   }
-
 }
