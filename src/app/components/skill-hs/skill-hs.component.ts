@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { skillhs } from 'src/app/mocks/skill-hs';
+import { LoginDataService } from 'src/app/services/login-data.service';
 import { SkillHsService } from 'src/app/services/skill-hs.service';
 import { SkillsDataService } from 'src/app/services/skills-data.service';
 
@@ -9,11 +10,11 @@ import { SkillsDataService } from 'src/app/services/skills-data.service';
   styleUrls: ['./skill-hs.component.css']
 })
 export class SkillHSComponent implements OnInit {
-
+  edit: boolean = false
   skills!: skillhs[]
   enabled!: boolean
 
-  constructor(private skillData: SkillHsService, private newData: SkillsDataService) { }
+  constructor(private skillData: SkillHsService, private newData: SkillsDataService, private editData: LoginDataService) { }
 
   ngOnInit(): void {
     this.skillData.getSkill().subscribe((skills) => {
@@ -21,6 +22,7 @@ export class SkillHSComponent implements OnInit {
       console.log(this.skills)
     })
     this.newData.currentEdtBtnData.subscribe(d => this.enabled = d)
+    this.editData.currentData.subscribe(data => this.edit = data)
   }
 
   recieveEnable(data: boolean) {

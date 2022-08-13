@@ -10,9 +10,13 @@ import { ProyectsDataService } from 'src/app/services/proyects-data.service';
 export class ProyectsItemComponent implements OnInit {
   link: string = 'https://'
   reader: FileReader = new FileReader
+  img!: string | ArrayBuffer | null
+  id!: number | undefined
+  @Output() onSendImg: EventEmitter<string | ArrayBuffer | null> = new EventEmitter
   @Output() onDeletePy: EventEmitter<proyect> = new EventEmitter
   @Output() onEditPy: EventEmitter<proyect> = new EventEmitter
   @Input() py!: proyect
+  cool!: string
   enabled: boolean = false
   edtEnabled: boolean = false
   editable: object = { 'border': '1px solid', 'borderRadius': '6px', 'display': 'inline-block' };
@@ -26,6 +30,8 @@ export class ProyectsItemComponent implements OnInit {
         this.edtEnabled = false
       }
     })
+
+    this.cool = `a${this.py.id}`
   }
 
   edtEnable(nombre: string, descripcion: string,) {
@@ -45,10 +51,16 @@ export class ProyectsItemComponent implements OnInit {
   updateImage(file: any) {
     let newImg
     newImg = file.target.files[0]
+    console.log(newImg)
     this.reader.onload = () => {
       let result = this.reader.result
       this.py.imgurl = result
     }
     this.reader.readAsDataURL(newImg)
+  }
+
+  sendimg() {
+    this.img = this.py.imgurl
+    this.id = this.py.id
   }
 }

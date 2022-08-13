@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="card" id="test">
                     <div class="card-body pb-0" id="edcardbody">
-                        <edt-btn (enableEvent)="recieveEnable($event)"></edt-btn>
+                        <edt-btn (enableEvent)="recieveEnable($event)" *ngIf="edit"></edt-btn>
                         <edu-list></edu-list>
                         <ex-list></ex-list>
                     </div>

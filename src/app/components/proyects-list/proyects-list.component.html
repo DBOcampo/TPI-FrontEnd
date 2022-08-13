@@ -1,5 +1,5 @@
 <div class="card-body">
-    <edt-btn (enableEvent)="recieveEnable($event)"></edt-btn>
+    <edt-btn (enableEvent)="recieveEnable($event)" *ngIf="edit"></edt-btn>
     <h5 class="card-title pb-3">Proyectos</h5>
     <div class="row row-cols-1 row-cols-md-2">
         <proyects-item *ngFor="let py of proyectos" [py]="py" (onDeletePy)="delPy($event)" (onEditPy)="editPy($event)">

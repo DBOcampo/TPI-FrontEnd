@@ -3,7 +3,7 @@
         <div class="col text-center mt-2" style="word-break: break-word;">
             <h1 class="noselect">
                 <span class="name" [ngStyle]="isActive ? editable : {}" [contentEditable]="isActive">{{name}}</span>
-                <a class="btn" (click)="enableEditName()" style=" margin-right: -52px;">
+                <a class="btn" (click)="enableEditName()" style=" margin-right: -52px;" *ngIf="edit">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         [style.fill]="isActive ? 'red' : 'gray'" class="bi bi-pencil-fill mb-2" viewBox="0 0 16 16"
                         id="namedt">

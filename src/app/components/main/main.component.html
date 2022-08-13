@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 pr-0 pl-0">
             <div class="container-fluid px-0" style="width: 100%;">
-                <div style="position: relative; top: 60px;">
+                <div style="position: relative; top: 60px;" *ngIf="edit">
                     <label class="btn mr-3 mt-2" id="banner" (change)="changeImg($event.target)"
                         style="position: relative; float: right;" id="bnrbtn">
                         <input type="file" accept="image/png, image/jpeg" hidden>

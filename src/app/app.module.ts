@@ -31,6 +31,8 @@ import { ProyectsComponent } from './components/proyects/proyects.component';
 import { ProyectsListComponent } from './components/proyects-list/proyects-list.component';
 import { ProyectsItemComponent } from './components/proyects-item/proyects-item.component';
 import { ProyectsModalComponent } from './components/proyects-modal/proyects-modal.component';
+import { LogoutBtnComponent } from './components/logout-btn/logout-btn.component';
+import { ProyectsImgModalComponent } from './components/proyects-img-modal/proyects-img-modal.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { ProyectsModalComponent } from './components/proyects-modal/proyects-mod
     ProyectsComponent,
     ProyectsListComponent,
     ProyectsItemComponent,
-    ProyectsModalComponent
+    ProyectsModalComponent,
+    LogoutBtnComponent,
+    ProyectsImgModalComponent
   ],
   imports: [
     BrowserModule,

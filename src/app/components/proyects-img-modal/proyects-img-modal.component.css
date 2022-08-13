@@ -1,0 +1,10 @@
+img
+{
+    object-fit: contain;
+    max-height: 85vh;
+}
+
+.father
+{
+    padding-left: 15px;
+}

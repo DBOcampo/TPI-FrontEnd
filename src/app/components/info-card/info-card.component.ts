@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginDataService } from 'src/app/services/login-data.service';
 
 @Component({
   selector: 'info-card',
@@ -6,19 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-card.component.css']
 })
 export class InfoCardComponent implements OnInit {
-
+  edit: boolean = false
   ubication: string = 'Buenos Aires, Argentina'
   age: number = 22
   aboutme: string = 'Entusiasta de la programación y de la tecnología en general, mi meta es crear aplicaciones y programas para ayudar a la gente a tener fácil acceso a las cosas que parecen complicadas de la tecnología'
   enabled: boolean = false
-  editable: object = {'border': '1px solid', 'borderRadius': '6px', 'display': 'inline-block'};
+  editable: object = { 'border': '1px solid', 'borderRadius': '6px', 'display': 'inline-block' };
 
-  constructor() { }
+  constructor(private editData: LoginDataService) { }
 
   ngOnInit(): void {
+    this.editData.currentData.subscribe(data => this.edit = data)
   }
 
-  recieveEnable($event:boolean){
+  recieveEnable($event: boolean) {
     this.enabled = $event
     console.log("Recive works!")
     console.log(this.enabled)

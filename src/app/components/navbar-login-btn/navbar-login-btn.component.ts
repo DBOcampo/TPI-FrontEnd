@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginDataService } from 'src/app/services/login-data.service';
 
 @Component({
   selector: 'login-btn',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar-login-btn.component.css']
 })
 export class NavbarLoginBtnComponent implements OnInit {
-
-  constructor() { }
+  edit!: boolean
+  constructor(private editData: LoginDataService) { }
 
   ngOnInit(): void {
+    this.editData.currentData.subscribe(data => this.edit = !data)
   }
 
 }

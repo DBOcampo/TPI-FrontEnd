@@ -2,7 +2,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body" id="prcard">
-                <edt-btn (enableEvent)="recieveEnable($event)"></edt-btn>
+                <edt-btn (enableEvent)="recieveEnable($event)" *ngIf="edit"></edt-btn>
                 <h5 class="card-title pb-2">Hard & Soft Skills</h5>
                 <div class="lictn">
                     <skill-hs-item *ngFor="let skill of skills" [skill]="skill" [enabled]="enabled"
