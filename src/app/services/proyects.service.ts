@@ -14,27 +14,28 @@ const httpOptions = {
 })
 export class ProyectsService {
 
-  private apiURL = 'http://localhost:5000/proyects'
+  private apiURL = 'http://localhost:8080/Proyects'
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) { }
 
   getPy(): Observable<proyect[]> {
-    return this.http.get<proyect[]>(this.apiURL)
+    return this.http.get<proyect[]>(`${this.apiURL}/traer`)
   }
 
   delPy(py: proyect): Observable<proyect> {
-    console.log(py.id)
-    return this.http.delete<proyect>(`${this.apiURL}/${py.id}`)
+    console.log(py, 'from service')
+    const url = `${this.apiURL}/borrar/${py.id}`
+    return this.http.delete<proyect>(url, httpOptions)
   }
 
   addPy(py: proyect): Observable<proyect> {
-    return this.http.post<proyect>(this.apiURL, py, httpOptions)
+    console.log(py, 'from service')
+    return this.http.post<proyect>(`${this.apiURL}/crear`, py, httpOptions)
   }
 
   editPy(py: proyect): Observable<proyect> {
-    console.log(py.id)
-    return this.http.put<proyect>(`${this.apiURL}/${py.id}`, py, httpOptions)
+    console.log(py)
+    const url = `${this.apiURL}/editar/${py.id}`
+    return this.http.put<proyect>(url, py, httpOptions)
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
 import { LoginDataService } from 'src/app/services/login-data.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'login-modal',
@@ -9,22 +10,50 @@ import { LoginDataService } from 'src/app/services/login-data.service';
 })
 export class LoginModalComponent implements OnInit {
   edit: boolean = false
-  usuario: string = ''
-  contrasena: string = ''
+  form: any = {};
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
 
-  constructor(private editData: LoginDataService) { }
+  constructor(private editData: LoginDataService, private authService: AuthService,
+    private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
+      this.roles = this.tokenStorage.getUser().roles;
+      this.isLoggedIn = true;
+      if (this.roles[0] === 'ROLE_USER' && this.roles[1] === undefined) {
+        this.isLoggedIn = false
+      }
+      if (this.roles[0] === 'ROLE_ADMIN') {
+        this.editData.changeData(true)
+      }
+      console.log(this.roles)
+    }
     this.editData.currentData.subscribe(data => this.edit = data)
   }
 
-  login() {
-    if (this.usuario.length === 0) {
-      alert("Add an Usuario")
-      return
-    }
-    this.editData.changeData(true)
-    setTimeout(() => { this.usuario = '', this.contrasena = '' }, 1)
+  onSubmit() {
+    this.authService.login(this.form).subscribe(
+      data => {
+        this.editData.changeData(true)
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getUser().roles;
+        this.reloadPage();
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
+  }
+
+  reloadPage() {
+    window.location.reload();
   }
 
 }

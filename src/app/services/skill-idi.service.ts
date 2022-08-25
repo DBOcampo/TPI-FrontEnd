@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { skillidi } from '../mocks/skill-idi';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -13,23 +14,28 @@ const httpOptions = {
 })
 export class SkillIdiService {
 
-  private apiUrl = 'http://localhost:5000/skillidi'
+  private apiURL = 'http://localhost:8080/skillDi'
 
   constructor(private http: HttpClient) { }
 
-  getSkills() {
-    return this.http.get<skillidi[]>(this.apiUrl)
+  getSkill(): Observable<skillidi[]> {
+    return this.http.get<skillidi[]>(`${this.apiURL}/traer`)
   }
 
-  delSkill(skill: skillidi) {
-    return this.http.delete<skillidi>(`${this.apiUrl}/${skill.id}`)
+  deleteSkill(list: skillidi): Observable<skillidi> {
+    console.log(list, 'from service')
+    const url = `${this.apiURL}/borrar/${list.id}`
+    return this.http.delete<skillidi>(url, httpOptions)
   }
 
-  addSkill(skill: skillidi) {
-    return this.http.post<skillidi>(this.apiUrl, skill)
+  addSkill(list: skillidi): Observable<skillidi> {
+    console.log(list, 'from service')
+    return this.http.post<skillidi>(`${this.apiURL}/crear`, list, httpOptions)
   }
 
-  editSkill(skill: skillidi) {
-    return this.http.put<skillidi>(`${this.apiUrl}/${skill.id}`, skill, httpOptions)
+  editSkill(list: skillidi): Observable<skillidi> {
+    console.log(list)
+    const url = `${this.apiURL}/editar/${list.id}`
+    return this.http.put<skillidi>(url, list, httpOptions)
   }
 }

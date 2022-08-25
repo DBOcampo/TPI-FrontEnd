@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { proyect } from 'src/app/mocks/proyects';
-import { ProyectsService } from 'src/app/services/proyects.service';
 
 @Component({
   selector: 'proyects',

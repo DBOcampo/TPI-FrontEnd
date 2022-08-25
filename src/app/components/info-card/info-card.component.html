@@ -5,15 +5,18 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <edt-btn (enableEvent)="recieveEnable($event)" *ngIf="edit"></edt-btn>
+                        <edt-btn (enableEvent)="recieveEnable($event)" *ngIf="edit" [isActive]="enabled"
+                            (click)="cancelEdit()"></edt-btn>
+                        <a class="ml-2" class="btn btn-success" id="infoeditbtn" *ngIf="edit && enabled"
+                            (click)="saveInfo(ubi.innerText, ag.innerText, abt.innerText)">Guardar</a>
                         <h5 class="card-title pb-2">Información Personal</h5>
                         <div id="infoContent">
-                            <h6 class="card-subtitle mb-3">Ubicación: <span [ngStyle]="enabled ? editable : {}"
+                            <h6 class="card-subtitle mb-3">Ubicación: <span #ubi [ngStyle]="enabled ? editable : {}"
                                     class="text-muted" [contentEditable]="enabled" id="ubi">{{ubication}}</span></h6>
-                            <h6 class="card-subtitle mb-3">Edad: <span [ngStyle]="enabled ? editable : {}"
+                            <h6 class="card-subtitle mb-3">Edad: <span #ag [ngStyle]="enabled ? editable : {}"
                                     class="text-muted" type="number" [contentEditable]="enabled" id="age">{{age}}</span>
                             </h6>
-                            <h6 class="card-subtitle mb-3">Acerca de mí: <span [ngStyle]="enabled ? editable : {}"
+                            <h6 class="card-subtitle mb-3">Acerca de mí: <span #abt [ngStyle]="enabled ? editable : {}"
                                     class="text-muted" [contentEditable]="enabled" id="abtme">{{aboutme}}</span></h6>
                         </div>
                         <button type="button" class="btn btn-dark mt-2" data-toggle="modal" data-target="#contacto">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { skillhs } from 'src/app/mocks/skill-hs';
+import { CancelEventService } from 'src/app/services/cancel-event.service';
 import { LoginDataService } from 'src/app/services/login-data.service';
 import { SkillHsService } from 'src/app/services/skill-hs.service';
 import { SkillsDataService } from 'src/app/services/skills-data.service';
@@ -14,7 +15,8 @@ export class SkillHSComponent implements OnInit {
   skills!: skillhs[]
   enabled!: boolean
 
-  constructor(private skillData: SkillHsService, private newData: SkillsDataService, private editData: LoginDataService) { }
+  constructor(private skillData: SkillHsService, private newData: SkillsDataService,
+    private editData: LoginDataService, private cancelEvent: CancelEventService) { }
 
   ngOnInit(): void {
     this.skillData.getSkill().subscribe((skills) => {
@@ -22,7 +24,13 @@ export class SkillHSComponent implements OnInit {
       console.log(this.skills)
     })
     this.newData.currentEdtBtnData.subscribe(d => this.enabled = d)
-    this.editData.currentData.subscribe(data => this.edit = data)
+    this.editData.currentData.subscribe((data) => {
+      this.edit = data
+      if (data === false) {
+        this.newData.changeEdtBtnData(false)
+        this.newData.changeBtnData(data)
+      }
+    })
   }
 
   recieveEnable(data: boolean) {
@@ -30,6 +38,7 @@ export class SkillHSComponent implements OnInit {
     this.newData.changeBtnData(data)
     if (this.enabled === false) {
       this.newData.changeEdtBtnData(false)
+      this.cancelEvent.sendClickEvent();
     }
     console.log(this.enabled)
   }

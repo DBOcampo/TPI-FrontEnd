@@ -15,26 +15,27 @@ const httpOptions = {
 })
 export class ExListService {
 
-  private apiURL = 'http://localhost:5000/exList'
+  private apiURL = 'http://localhost:8080/ExpList'
 
   constructor(private http: HttpClient) { }
 
   getList(): Observable<exList[]> {
-    return this.http.get<exList[]>(this.apiURL)
+    return this.http.get<exList[]>(`${this.apiURL}/traer`)
   }
 
-  deleteList(exlist: exList): Observable<exList> {
-    console.log(exlist)
-    const url = `${this.apiURL}/${exlist.id}`
-    return this.http.delete<exList>(url)
+  deleteList(list: exList): Observable<exList> {
+    console.log(list, 'from service')
+    const url = `${this.apiURL}/borrar/${list.id}`
+    return this.http.delete<exList>(url, httpOptions)
   }
 
-  addList(exlist: exList): Observable<exList> {
-    return this.http.post<exList>(this.apiURL, exlist, httpOptions)
+  addList(list: exList): Observable<exList> {
+    console.log(list, 'from service')
+    return this.http.post<exList>(`${this.apiURL}/crear`, list, httpOptions)
   }
 
-  editList(list: exList) {
-    const url = `${this.apiURL}/${list.id}`
+  editList(list: exList): Observable<exList> {
+    const url = `${this.apiURL}/editar/${list.id}`
     return this.http.put<exList>(url, list, httpOptions)
   }
 }

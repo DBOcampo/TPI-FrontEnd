@@ -16,7 +16,7 @@ export class SkillIdiComponent implements OnInit {
   constructor(private skillData: SkillIdiService, private newData: SkillsDataService) { }
 
   ngOnInit(): void {
-    this.skillData.getSkills().subscribe((skill) => {
+    this.skillData.getSkill().subscribe((skill) => {
       this.skills = skill
       console.log(this.skills)
     })
@@ -25,7 +25,7 @@ export class SkillIdiComponent implements OnInit {
   }
 
   deleteSkill(skill: skillidi) {
-    this.skillData.delSkill(skill).subscribe(() => {
+    this.skillData.deleteSkill(skill).subscribe(() => {
       this.skills = this.skills.filter(t => t.id !== skill.id)
     })
   }

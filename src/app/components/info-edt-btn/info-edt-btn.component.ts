@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'edt-btn',
@@ -6,8 +6,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./info-edt-btn.component.css']
 })
 export class InfoEdtBtnComponent implements OnInit {
-  isActive: boolean = false
-  state: string = 'Editar'
+  @Input() isActive: boolean = false
 
   @Output() enableEvent = new EventEmitter<boolean>();
 
@@ -18,7 +17,6 @@ export class InfoEdtBtnComponent implements OnInit {
 
   enableEdit() {
     this.isActive = !this.isActive
-    this.state = this.isActive ? 'Cerrar' : 'Editar'
     this.enableEvent.emit(this.isActive)
   }
 

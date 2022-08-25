@@ -33,6 +33,7 @@ import { ProyectsItemComponent } from './components/proyects-item/proyects-item.
 import { ProyectsModalComponent } from './components/proyects-modal/proyects-modal.component';
 import { LogoutBtnComponent } from './components/logout-btn/logout-btn.component';
 import { ProyectsImgModalComponent } from './components/proyects-img-modal/proyects-img-modal.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,7 @@ import { ProyectsImgModalComponent } from './components/proyects-img-modal/proye
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
