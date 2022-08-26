@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class MainService {
 
-  private apiURL = 'http://localhost:8080/mainImages'
+  private apiURL = 'https://calm-reaches-07333.herokuapp.com/mainImages'
 
   constructor(private http: HttpClient) { }
 

@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class EduListService {
 
-  private apiURL = 'http://localhost:8080/EduList'
+  private apiURL = 'https://calm-reaches-07333.herokuapp.com/EduList'
 
   constructor(private http: HttpClient) { }
 

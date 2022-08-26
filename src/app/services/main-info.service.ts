@@ -8,7 +8,7 @@ import { mInfo } from '../mocks/mainInfo';
 })
 export class MainInfoService {
 
-  private apiURL = 'http://localhost:8080/mainInfo'
+  private apiURL = 'https://calm-reaches-07333.herokuapp.com/mainInfo'
 
   constructor(private http: HttpClient) { }
 

@@ -8,7 +8,7 @@ import { infoCard } from '../mocks/infoCard';
 })
 export class InfoCardService {
 
-  private apiURL = 'http://localhost:8080/infoCard'
+  private apiURL = 'https://calm-reaches-07333.herokuapp.com/infoCard'
 
   constructor(private http: HttpClient) { }
 

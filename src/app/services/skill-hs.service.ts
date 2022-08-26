@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class SkillHsService {
 
-  private apiURL = 'http://localhost:8080/skillHs'
+  private apiURL = 'https://calm-reaches-07333.herokuapp.com/skillHs'
 
   constructor(private http: HttpClient) { }
 
