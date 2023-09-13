@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class SkillIdiService {
 
-  private apiURL = 'https://calm-reaches-07333.herokuapp.com/skillDi'
+  private apiURL = 'https://portfoliopi-nodejs-api-production.up.railway.app/api/skillDi'
 
   constructor(private http: HttpClient) { }
 
@@ -23,19 +23,16 @@ export class SkillIdiService {
   }
 
   deleteSkill(list: skillidi): Observable<skillidi> {
-    console.log(list, 'from service')
     const url = `${this.apiURL}/borrar/${list.id}`
     return this.http.delete<skillidi>(url, httpOptions)
   }
 
   addSkill(list: skillidi): Observable<skillidi> {
-    console.log(list, 'from service')
     return this.http.post<skillidi>(`${this.apiURL}/crear`, list, httpOptions)
   }
 
   editSkill(list: skillidi): Observable<skillidi> {
-    console.log(list)
     const url = `${this.apiURL}/editar/${list.id}`
-    return this.http.put<skillidi>(url, list, httpOptions)
+    return this.http.patch<skillidi>(url, list, httpOptions)
   }
 }

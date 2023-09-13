@@ -22,7 +22,6 @@ export class EduListComponent implements OnInit {
   ngOnInit(): void {
     this.listData.getList().subscribe((list) => {
       this.listI = list
-      console.log(list)
     })
     this.data.currentData.subscribe(d => this.enabled = d)
     this.data2.currentData2.subscribe(d => this.edtEnabled = d)
@@ -34,13 +33,20 @@ export class EduListComponent implements OnInit {
   }
 
   addList(list: List) {
+    console.log(list)
+    console.log("ADD LIST")
     this.listData.addList(list).subscribe((list) => {
-      console.log(list, 'from edulist')
+      console.log(list)
       this.listI.push(list)
+      console.log(this.listI)
     })
   }
 
   editList(list: List) {
     this.listData.editList(list).subscribe()
+  }
+
+  cancel() {
+
   }
 }

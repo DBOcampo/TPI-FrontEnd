@@ -60,7 +60,6 @@ export class SkillHSItemComponent implements OnInit {
     this.skill.skill = this.oldSkill.skill
     this.skill.porcentaje = this.oldPorcentaje
     this.skill.color = this.oldColor
-    console.log(this.skill, this.oldPorcentaje, this.oldColor)
     setTimeout(() => {
       this.skill.skill = this.oldSkill.skill.slice(0, -1)
       this.oldSkill.skill = this.skill.skill

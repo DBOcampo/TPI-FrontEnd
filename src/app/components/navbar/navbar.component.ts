@@ -24,7 +24,6 @@ export class NavbarComponent implements OnInit {
         this.admin = true
         this.roles[0] = 'ADMIN'
       }
-      console.log(this.roles)
     }
   }
 

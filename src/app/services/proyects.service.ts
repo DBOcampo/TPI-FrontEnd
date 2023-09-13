@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class ProyectsService {
 
-  private apiURL = 'https://calm-reaches-07333.herokuapp.com/Proyects'
+  private apiURL = 'https://portfoliopi-nodejs-api-production.up.railway.app/api/Proyects'
 
   constructor(private http: HttpClient) { }
 
@@ -23,19 +23,17 @@ export class ProyectsService {
   }
 
   delPy(py: proyect): Observable<proyect> {
-    console.log(py, 'from service')
     const url = `${this.apiURL}/borrar/${py.id}`
     return this.http.delete<proyect>(url, httpOptions)
   }
 
   addPy(py: proyect): Observable<proyect> {
-    console.log(py, 'from service')
     return this.http.post<proyect>(`${this.apiURL}/crear`, py, httpOptions)
   }
 
   editPy(py: proyect): Observable<proyect> {
-    console.log(py)
     const url = `${this.apiURL}/editar/${py.id}`
-    return this.http.put<proyect>(url, py, httpOptions)
+    console.log(py)
+    return this.http.patch<proyect>(url, py, httpOptions)
   }
 }

@@ -21,7 +21,6 @@ export class SkillHSComponent implements OnInit {
   ngOnInit(): void {
     this.skillData.getSkill().subscribe((skills) => {
       this.skills = skills
-      console.log(this.skills)
     })
     this.newData.currentEdtBtnData.subscribe(d => this.enabled = d)
     this.editData.currentData.subscribe((data) => {
@@ -40,7 +39,6 @@ export class SkillHSComponent implements OnInit {
       this.newData.changeEdtBtnData(false)
       this.cancelEvent.sendClickEvent();
     }
-    console.log(this.enabled)
   }
 
   deleteSkill(skill: skillhs) {

@@ -20,6 +20,7 @@ export class LoginModalComponent implements OnInit {
     private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
+    // this.editData.changeData(true) /// REMEMBER TO REMOVE THIS!!!!!!!!!!!!!!!!!!!
     if (this.tokenStorage.getToken()) {
       this.roles = this.tokenStorage.getUser().roles;
       this.isLoggedIn = true;
@@ -29,7 +30,6 @@ export class LoginModalComponent implements OnInit {
       if (this.roles[0] === 'ROLE_ADMIN') {
         this.editData.changeData(true)
       }
-      console.log(this.roles)
     }
     this.editData.currentData.subscribe(data => this.edit = data)
   }
@@ -37,11 +37,13 @@ export class LoginModalComponent implements OnInit {
   onSubmit() {
     this.authService.login(this.form).subscribe(
       data => {
+        console.log(data)
         this.editData.changeData(true)
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
+        console.log(this.tokenStorage.getUser().roles)
         this.roles = this.tokenStorage.getUser().roles;
         this.reloadPage();
       },

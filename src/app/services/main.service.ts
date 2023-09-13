@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class MainService {
 
-  private apiURL = 'https://calm-reaches-07333.herokuapp.com/mainImages'
+  private apiURL = 'https://portfoliopi-nodejs-api-production.up.railway.app/api/mainImages'
 
   constructor(private http: HttpClient) { }
 

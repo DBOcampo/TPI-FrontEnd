@@ -43,8 +43,6 @@ export class EduItemComponent implements OnInit, OnDestroy {
 
   enableEdit() {
     this.edtEnabled = !this.edtEnabled
-    console.log(this.listL, this.oldList)
-    console.log(this.edtEnabled, 'from item')
   }
 
   sendEdit(i: string, t: string, p: string) {
@@ -60,7 +58,6 @@ export class EduItemComponent implements OnInit, OnDestroy {
   }
 
   cancelEdit() {
-    console.log(this.oldList)
     this.oldList.institucion = this.oldList.institucion + ' '
     this.oldList.titulo = this.oldList.titulo + ' '
     this.oldList.periodo = this.oldList.periodo + ' '

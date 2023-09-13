@@ -18,7 +18,6 @@ export class SkillIdiComponent implements OnInit {
   ngOnInit(): void {
     this.skillData.getSkill().subscribe((skill) => {
       this.skills = skill
-      console.log(this.skills)
     })
 
     this.newData.currentBtnData.subscribe(d => this.enabled = d)

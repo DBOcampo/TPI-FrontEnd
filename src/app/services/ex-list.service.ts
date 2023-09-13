@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class ExListService {
 
-  private apiURL = 'https://calm-reaches-07333.herokuapp.com/ExpList'
+  private apiURL = 'https://portfoliopi-nodejs-api-production.up.railway.app/api/ExpList'
 
   constructor(private http: HttpClient) { }
 
@@ -24,18 +24,16 @@ export class ExListService {
   }
 
   deleteList(list: exList): Observable<exList> {
-    console.log(list, 'from service')
     const url = `${this.apiURL}/borrar/${list.id}`
     return this.http.delete<exList>(url, httpOptions)
   }
 
   addList(list: exList): Observable<exList> {
-    console.log(list, 'from service')
     return this.http.post<exList>(`${this.apiURL}/crear`, list, httpOptions)
   }
 
   editList(list: exList): Observable<exList> {
     const url = `${this.apiURL}/editar/${list.id}`
-    return this.http.put<exList>(url, list, httpOptions)
+    return this.http.patch<exList>(url, list, httpOptions)
   }
 }

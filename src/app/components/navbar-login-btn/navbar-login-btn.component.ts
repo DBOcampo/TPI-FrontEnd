@@ -14,4 +14,8 @@ export class NavbarLoginBtnComponent implements OnInit {
     this.editData.currentData.subscribe(data => this.edit = !data)
   }
 
+  login(): void {
+    this.editData.changeData(true)
+  }
+
 }

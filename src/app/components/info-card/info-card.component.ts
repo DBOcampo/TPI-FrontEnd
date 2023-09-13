@@ -12,10 +12,10 @@ export class InfoCardComponent implements OnInit {
   edit: boolean = false
   infoCard!: infoCard[]
   oldUbication!: string
-  oldAge!: number
+  oldAge!: string
   oldAboutme!: string
   ubication: string = 'Buenos Aires, Argentina'
-  age: number = 22
+  age: string = '22'
   aboutme: string = 'Entusiasta de la programación y de la tecnología en general, mi meta es crear aplicaciones y programas para ayudar a la gente a tener fácil acceso a las cosas que parecen complicadas de la tecnología'
   enabled: boolean = false
   editable: object = { 'border': '1px solid', 'borderRadius': '6px', 'display': 'inline-block' };
@@ -42,17 +42,14 @@ export class InfoCardComponent implements OnInit {
 
   recieveEnable($event: boolean) {
     this.enabled = $event
-    console.log("Recive works!")
-    console.log(this.enabled)
   }
 
   saveInfo(u: string, a: string, ab: string) {
-    let newage = parseInt(a)
+    let newage = a
     const newValues = { id: this.infoCard[0].id, ubicacion: u, edad: newage, sobremi: ab }
     this.ubication = u
     this.age = newage
     this.aboutme = ab
-    console.log(newValues)
     this.infoCardS.saveInfo(newValues).subscribe()
     this.oldUbication = this.ubication
     this.oldAge = this.age
@@ -63,16 +60,14 @@ export class InfoCardComponent implements OnInit {
   cancelEdit() {
     if (!this.enabled) {
       this.oldUbication = this.oldUbication + ' '
-      this.oldAge = this.oldAge + 1
+      this.oldAge = this.oldAge + ' '
       this.oldAboutme = this.oldAboutme + ' '
       this.ubication = this.oldUbication
       this.age = this.oldAge
       this.aboutme = this.oldAboutme
-      console.log(this.oldAge)
       setTimeout(() => {
         this.ubication = this.oldUbication.slice(0, -1)
-        this.age = this.oldAge - 1
-        console.log(this.oldAge)
+        this.age = this.oldAge.slice(0, -1)
         this.aboutme = this.oldAboutme.slice(0, -1)
         this.oldUbication = this.ubication
         this.oldAge = this.age

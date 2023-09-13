@@ -22,7 +22,6 @@ export class MainChangepfpComponent implements OnInit {
   ngOnInit(): void {
     this.mainService.getImg().subscribe((img) => {
       this.imgDB = img
-      console.log(this.imgDB)
       this.oldimg = this.imgDB[0].img
       this.img = this.imgDB[0].img
     })
@@ -41,7 +40,6 @@ export class MainChangepfpComponent implements OnInit {
 
   edtEnable() {
     this.edtEnabled = !this.edtEnabled
-    console.log(this.edtEnabled)
   }
 
   saveImg() {

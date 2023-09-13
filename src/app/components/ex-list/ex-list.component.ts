@@ -26,13 +26,10 @@ export class ExListComponent implements OnInit {
     this.exListData.deleteList(list).subscribe(() =>
       this.list = this.list.filter(t => t.id !== list.id)
     )
-    console.log(list, 'from list')
   }
 
   addList(list: exList): void {
-    console.log(this.list)
     this.exListData.addList(list).subscribe((list) => {
-      console.log(list)
       this.list.push(list)
     })
   }

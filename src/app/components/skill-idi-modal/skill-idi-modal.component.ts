@@ -23,7 +23,6 @@ export class SkillIdiModalComponent implements OnInit {
       alert('Please add an Idioma')
       return
     }
-    console.log({ i: this.idioma, p: this.porcentaje, c: this.color })
     const newValues = { idioma: this.idioma, porcentaje: this.porcentaje, color: this.color }
     setTimeout(() => { this.idioma = '', this.porcentaje = 0, this.color = '' }, 1)
     this.onSubmit.emit(newValues)

@@ -60,7 +60,6 @@ export class ProyectsItemComponent implements OnInit {
   updateImage(file: any) {
     let newImg
     newImg = file.target.files[0]
-    console.log(newImg)
     this.reader.onload = () => {
       let result = this.reader.result
       this.py.imgurl = result
@@ -92,16 +91,13 @@ export class ProyectsItemComponent implements OnInit {
     this.py.nombre = this.oldNombre
     this.py.descripcion = this.oldDescripcion
     this.py.link = this.oldLink
-    console.log(this.oldNombre, this.oldDescripcion, this.oldLink)
     setTimeout(() => {
       this.py.nombre = this.oldNombre.slice(0, -1)
       this.py.descripcion = this.oldDescripcion.slice(0, -1)
       this.py.link = this.oldLink.slice(0, -1)
-      console.log(this.oldNombre, this.oldDescripcion, this.oldLink, "- SLICED")
       this.oldNombre = this.py.nombre
       this.oldDescripcion = this.py.descripcion
       this.oldLink = this.py.link
-      console.log(this.oldNombre, this.oldDescripcion, this.oldLink)
     }, 0)
   }
 }

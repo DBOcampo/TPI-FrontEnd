@@ -8,7 +8,7 @@ import { infoCard } from '../mocks/infoCard';
 })
 export class InfoCardService {
 
-  private apiURL = 'https://calm-reaches-07333.herokuapp.com/infoCard'
+  private apiURL = 'https://portfoliopi-nodejs-api-production.up.railway.app/api/infoCard'
 
   constructor(private http: HttpClient) { }
 
@@ -18,6 +18,6 @@ export class InfoCardService {
 
   saveInfo(info: infoCard): Observable<infoCard> {
     const url = `${this.apiURL}/editar/${info.id}`
-    return this.http.put<infoCard>(url, info)
+    return this.http.patch<infoCard>(url, info)
   }
 }

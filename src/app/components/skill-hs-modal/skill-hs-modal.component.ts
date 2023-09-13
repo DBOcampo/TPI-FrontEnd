@@ -18,10 +18,6 @@ export class SkillHsModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  test() {
-    console.log(this.porcentaje)
-  }
-
   onSubmit() {
     if (this.skill.length === 0) {
       alert('Anada una skill')
@@ -31,6 +27,5 @@ export class SkillHsModalComponent implements OnInit {
     const newSkills = { skill, porcentaje, color }
     this.onAddSkill.emit(newSkills)
     setTimeout(() => { this.skill = '', this.porcentaje = 0, this.color = '#000000' }, 1)
-    console.log(newSkills)
   }
 }

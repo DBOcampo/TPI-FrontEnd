@@ -38,7 +38,6 @@ export class ProyectsListComponent implements OnInit {
       this.pyNewData.changeEdtBtnData(false)
       this.cancelEvent.sendClickEvent();
     }
-    console.log(this.enabled)
   }
 
   delPy(py: proyect) {

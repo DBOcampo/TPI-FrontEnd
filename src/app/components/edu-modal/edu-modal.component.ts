@@ -32,8 +32,8 @@ export class EduModalComponent implements OnInit {
     }
     const { institucion, titulo, periodo } = this
     const newList = { institucion, titulo, periodo }
+    console.log(newList)
     this.onNewList.emit(newList)
-    console.log(newList, 'from modal')
     setTimeout(() => { this.institucion = '', this.titulo = '', this.periodo = '' }, 1)
   }
 

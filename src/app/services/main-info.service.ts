@@ -8,7 +8,7 @@ import { mInfo } from '../mocks/mainInfo';
 })
 export class MainInfoService {
 
-  private apiURL = 'https://calm-reaches-07333.herokuapp.com/mainInfo'
+  private apiURL = 'https://portfoliopi-nodejs-api-production.up.railway.app/api/mainInfo'
 
   constructor(private http: HttpClient) { }
 
@@ -18,6 +18,6 @@ export class MainInfoService {
 
   saveInfo(info: mInfo): Observable<mInfo> {
     const url = `${this.apiURL}/editar/${info.id}`
-    return this.http.put<mInfo>(url, info)
+    return this.http.patch<mInfo>(url, info)
   }
 }

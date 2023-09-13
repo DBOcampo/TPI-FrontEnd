@@ -38,6 +38,5 @@ export class ProyectsModalComponent implements OnInit {
     const newSkills = { imgurl, nombre, descripcion, link }
     this.newPy.emit(newSkills)
     setTimeout(() => { this.imgurl = '', this.nombre = '', this.descripcion = '', this.link = '' }, 1)
-    console.log(newSkills)
   }
 }

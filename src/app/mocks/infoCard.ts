@@ -1,6 +1,6 @@
 export interface infoCard {
     id?: number;
     ubicacion: string;
-    edad: number;
+    edad: string;
     sobremi: string;
 }

@@ -28,11 +28,9 @@ export class MainInfoComponent implements OnInit {
       this.oldInfoItem2 = info[0].ocupacion
       this.name = info[0].nombre
       this.ocupacion = info[0].ocupacion
-      console.log(this.info)
     })
     this.editData.currentData.subscribe((data) => {
       this.edit = data
-      console.log(data, 'from subscription main info')
       if (data === false) {
         this.isActive = false
       }
@@ -41,7 +39,6 @@ export class MainInfoComponent implements OnInit {
 
   enableEditName() {
     this.isActive = !this.isActive
-    console.log(this.isActive)
   }
 
   saveEdit(n: string, o: string) {

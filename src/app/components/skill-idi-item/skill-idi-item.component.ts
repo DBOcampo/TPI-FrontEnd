@@ -63,7 +63,6 @@ export class SkillIdiItemComponent implements OnInit {
     this.skills.idioma = this.oldSkills.idioma
     this.skills.porcentaje = this.oldPorcentaje
     this.skills.color = this.oldColor
-    console.log(this.skills, this.oldPorcentaje, this.oldColor)
     setTimeout(() => {
       this.skills.idioma = this.oldSkills.idioma.slice(0, -1)
       this.oldSkills.idioma = this.skills.idioma

@@ -51,12 +51,10 @@ export class ExItemComponent implements OnInit {
   }
 
   delList(list: exList) {
-    console.log(list, 'from item')
     this.deleteList.emit(list)
   }
 
   cancelEdit() {
-    console.log(this.oldList)
     this.oldList.empresa = this.oldList.empresa + ' '
     this.oldList.puesto = this.oldList.puesto + ' '
     this.oldList.periodo = this.oldList.periodo + ' '
