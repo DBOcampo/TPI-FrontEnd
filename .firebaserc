@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "portfoliopi"
-  }
+    "default": "portfoliopi",
+    "newPortfolioPi": "portfoliopi"
+  },
+  "targets": {},
+  "etags": {}
 }
