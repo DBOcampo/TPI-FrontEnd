@@ -8,7 +8,7 @@ import { mInfo } from '../mocks/mainInfo';
 })
 export class MainInfoService {
 
-  private apiURL = 'https://portfoliopi-nodejs-api-production.up.railway.app/api/mainInfo'
+  private apiURL = 'https://portfolio-back-node-7b3m9knxu-dylans-projects-30f80c71.vercel.app/api/mainInfo'
 
   constructor(private http: HttpClient) { }
 

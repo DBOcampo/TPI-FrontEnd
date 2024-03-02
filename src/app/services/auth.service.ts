@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-const AUTH_API = 'https://portfoliopi-nodejs-api-production.up.railway.app/api/auth/';
+const AUTH_API = 'https://portfolio-back-node-7b3m9knxu-dylans-projects-30f80c71.vercel.app/api/auth/';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };

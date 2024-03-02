@@ -8,7 +8,7 @@ import { infoCard } from '../mocks/infoCard';
 })
 export class InfoCardService {
 
-  private apiURL = 'https://portfoliopi-nodejs-api-production.up.railway.app/api/infoCard'
+  private apiURL = 'https://portfolio-back-node-7b3m9knxu-dylans-projects-30f80c71.vercel.app/api/infoCard'
 
   constructor(private http: HttpClient) { }
 

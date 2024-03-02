@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class ExListService {
 
-  private apiURL = 'https://portfoliopi-nodejs-api-production.up.railway.app/api/ExpList'
+  private apiURL = 'https://portfolio-back-node-7b3m9knxu-dylans-projects-30f80c71.vercel.app/api/ExpList'
 
   constructor(private http: HttpClient) { }
 

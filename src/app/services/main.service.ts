@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class MainService {
 
-  private apiURL = 'https://portfoliopi-nodejs-api-production.up.railway.app/api/mainImages'
+  private apiURL = 'https://portfolio-back-node-7b3m9knxu-dylans-projects-30f80c71.vercel.app/api/mainImages'
 
   constructor(private http: HttpClient) { }
 

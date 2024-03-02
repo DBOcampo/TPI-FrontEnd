@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class SkillIdiService {
 
-  private apiURL = 'https://portfoliopi-nodejs-api-production.up.railway.app/api/skillDi'
+  private apiURL = 'https://portfolio-back-node-7b3m9knxu-dylans-projects-30f80c71.vercel.app/api/skillDi'
 
   constructor(private http: HttpClient) { }
 
